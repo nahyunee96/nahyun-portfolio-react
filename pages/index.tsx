@@ -6,7 +6,64 @@ import styles from '../styles/Home.module.scss'
 const Home: NextPage = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
-  //const portfolios = [''];
+  const portfolios = [
+    {
+      name: 'HiveMedia',
+      src: '//13.125.72.223'
+    },
+    {
+      name: 'Event World',
+      src: '//eventworld.kr'
+    },
+    {
+      name: 'One Meditech',
+      src: '//portfolio.nhkim96.com/onemeditech'
+    },
+    {
+      name: 'Red Gingseng Egg',
+      src: '//portfolio.nhkim96.com/hongsam'
+    },
+    {
+      name: 'Le10 By Trimage',
+      src: '//portfolio.nhkim96.com/le10bytrimage'
+    },
+    {
+      name: 'AMADEN',
+      src: '//portfolio.nhkim96.com/amaden'
+    },
+    {
+      name: 'LAKMON',
+      src: '//portfolio.nhkim96.com/dongtanlakmon'
+    },
+    {
+      name: 'ELSIGNATURE',
+      src: '//portfolio.nhkim96.com/elsignature'
+    },
+    {
+      name: 'G Well Estate',
+      src: '//portfolio.nhkim96.com/gwellestate'
+    },
+    {
+      name: 'HERITAGE',
+      src: '//portfolio.nhkim96.com/heritage'
+    },
+    {
+      name: 'Ulleng',
+      src: '//portfolio.nhkim96.com/ulleng'
+    },
+    {
+      name: 'TiGroup',
+      src: '//portfolio.nhkim96.com/tigroup'
+    },
+    {
+      name: 'TwentyFirst',
+      src: '//portfolio.nhkim96.com/twentyfirst'
+    },
+    {
+      name: 'Us_Maska',
+      src: '//portfolio.nhkim96.com/us_maska'
+    }
+  ]
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -95,8 +152,7 @@ const Home: NextPage = () => {
         transitionLayer.classList.add(styles.closing);
       }, 200);
       setMenuOpen(false);
-      
-    }
+    };
   };
 
   return (
@@ -155,11 +211,9 @@ const Home: NextPage = () => {
               그만큼 기술을 빨리 터득하는 편입니다 ! <br />
               부족할 수는 있지만, 제 자신에게 부끄럽지는 않게 <br />
               작업하고, 노력하고 있습니다.
-              
             </p>
           </div>
         </div>
-        
       </section>
       <section className={styles.portfolio} id="sMove3">
         <div className={styles.tabTopWrap}>
@@ -173,17 +227,17 @@ const Home: NextPage = () => {
           <div className={styles.inner}>
             <ul className={styles.stackWrap}>
               {
-                Array(9).fill(0).map((_: number, i: number) => (
+                portfolios.map((item: { name: string; src: string; }, i: number) => (
                   <li className={styles.stackBox} key={`li-${i}`}>
-                    <Link href={{ pathname: '/' }}>
+                    <a href={item.src} target="_blank" rel="noreferrer">
                       <a className={styles.stack}>
                         <div className={styles.stack__deco}></div>
                         <div className={styles.stack__deco}></div>
                         <div className={styles.stack__deco}></div>
                         <div className={styles.stack__deco}></div>
-                        <div className={styles.stack__figure}>PORTFOLIO NAME {i+1}</div>
+                        <div className={styles.stack__figure}>{item.name}</div>
                       </a>
-                    </Link>
+                    </a>
                   </li>
                 ))
               }
