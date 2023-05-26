@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   const portfolios = [
     {
       name: 'HiveMedia',
-      src: '//13.125.72.223'
+      src: 'http://13.125.72.223/'
     },
     {
       name: 'Event World',
@@ -38,6 +38,10 @@ const Home: NextPage = () => {
     {
       name: 'ELSIGNATURE',
       src: '//portfolio.nhkim96.com/elsignature'
+    },
+    {
+      name: 'Ocean First',
+      src: '//portfolio.nhkim96.com/meonggiocf'
     },
     {
       name: 'G Well Estate',

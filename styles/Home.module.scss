@@ -931,7 +931,7 @@
 
 @media screen and (max-width:575px) {
   .container {
-    padding: 40px;
+    padding: 20px;
     min-width:320px;
 
     .aside {
@@ -1042,11 +1042,11 @@
           .stackBox {
             margin-bottom: 30px;
             .stack {
-              width: 110px;
-              height: 80px;
+              width: 130px;
+              height: 100px;
 
               .stack__figure {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
                 text-align:center;
                 padding: 10px;
               }
