@@ -15,10 +15,10 @@ const Home: NextPage = () => {
       name: 'HiveMedia',
       src: 'http://13.125.72.223/'
     },
-    /*{
+    {
       name: 'Event World',
-      src: '//eventworld.kr'
-    },*/
+      src: 'https://eventworld.kr/'
+    },
     {
       name: 'One Meditech',
       src: 'https://portfolio.nhkim96.com/onemeditech'
