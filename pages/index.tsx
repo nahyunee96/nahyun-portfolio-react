@@ -1,73 +1,77 @@
 import type { NextPage } from 'next'
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  // const [isReady, setIsReady] = useState<boolean>(false);
+  // useEffect(() => {
+  //   setIsReady(true);
+  // }, []);
 
-  const portfolios = [
+  const portfolios = useMemo(() => [
     {
       name: 'HiveMedia',
       src: 'http://13.125.72.223/'
     },
-    {
+    /*{
       name: 'Event World',
       src: '//eventworld.kr'
-    },
+    },*/
     {
       name: 'One Meditech',
-      src: '//portfolio.nhkim96.com/onemeditech'
+      src: 'https://portfolio.nhkim96.com/onemeditech'
     },
     {
       name: 'Red Gingseng Egg',
-      src: '//portfolio.nhkim96.com/hongsam'
+      src: 'https://portfolio.nhkim96.com/hongsam'
     },
     {
       name: 'Le10 By Trimage',
-      src: '//portfolio.nhkim96.com/le10bytrimage'
+      src: 'https://portfolio.nhkim96.com/le10bytrimage'
     },
     {
       name: 'AMADEN',
-      src: '//portfolio.nhkim96.com/amaden'
+      src: 'https://portfolio.nhkim96.com/amaden'
     },
     {
       name: 'LAKMON',
-      src: '//portfolio.nhkim96.com/dongtanlakmon'
+      src: 'https://portfolio.nhkim96.com/dongtanlakmon'
     },
     {
       name: 'ELSIGNATURE',
-      src: '//portfolio.nhkim96.com/elsignature'
+      src: 'https://portfolio.nhkim96.com/elsignature'
     },
     {
       name: 'Ocean First',
-      src: '//portfolio.nhkim96.com/meonggiocf'
+      src: 'https://portfolio.nhkim96.com/meonggiocf'
     },
     {
       name: 'G Well Estate',
-      src: '//portfolio.nhkim96.com/gwellestate'
+      src: 'https://portfolio.nhkim96.com/gwellestate'
     },
     {
-      name: 'HERITAGE',
-      src: '//portfolio.nhkim96.com/heritage'
+      name: 'Hillstate Adview',
+      src: 'https://portfolio.nhkim96.com/hillstate_sunhwathewise/adview.php'
     },
-    {
-      name: 'Ulleng',
-      src: '//portfolio.nhkim96.com/ulleng'
-    },
+    // {
+    //   name: 'Ulleng',
+    //   src: '//portfolio.nhkim96.com/ulleng'
+    // },
     {
       name: 'TiGroup',
-      src: '//portfolio.nhkim96.com/tigroup'
-    },
-    {
-      name: 'TwentyFirst',
-      src: '//portfolio.nhkim96.com/twentyfirst'
-    },
-    {
-      name: 'Us_Maska',
-      src: '//portfolio.nhkim96.com/us_maska'
+      src: 'https://portfolio.nhkim96.com/tigroup'
     }
-  ]
+    // {
+    //   name: 'TwentyFirst',
+    //   src: '//portfolio.nhkim96.com/twentyfirst'
+    // },
+    // {
+    //   name: 'Us_Maska',
+    //   src: '//portfolio.nhkim96.com/us_maska'
+    // }
+  ], []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -233,14 +237,14 @@ const Home: NextPage = () => {
               {
                 portfolios.map((item: { name: string; src: string; }, i: number) => (
                   <li className={styles.stackBox} key={`li-${i}`}>
-                    <a href={item.src} target="_blank" rel="noreferrer">
-                      <a className={styles.stack}>
+                    <a href={item.src} target="_blank" rel="noreferrer" className={styles.stack}>
+                      <span >
                         <div className={styles.stack__deco}></div>
                         <div className={styles.stack__deco}></div>
                         <div className={styles.stack__deco}></div>
                         <div className={styles.stack__deco}></div>
                         <div className={styles.stack__figure}>{item.name}</div>
-                      </a>
+                      </span>
                     </a>
                   </li>
                 ))
@@ -258,16 +262,16 @@ const Home: NextPage = () => {
             <ul className={styles.info}>
               <li>
                 <label htmlFor="TEL.">TEl.</label> 
-                <span>010-2150-0318</span>
+                <span>010-5736-2172</span>
               </li>
               <li>
                 <label htmlFor="EMAIL.">EMAIL.</label> 
                 <span>unique5264@naver.com /<br /> unique950318@gmail.com</span>
               </li>
-              <li>
+              {/* <li>
                 <label htmlFor="INSTAGRAM.">INSTAGRAM.</label> 
                 <span>@naa_hyuun_job</span>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className={styles.image}></div>
