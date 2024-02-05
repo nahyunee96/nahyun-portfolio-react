@@ -43,10 +43,10 @@ const Home: NextPage = () => {
       //name: 'ELSIGNATURE',
       //src: 'https://portfolio.nhkim96.com/elsignature'
     //},
-    {
-      name: 'Ocean First',
-      src: 'https://portfolio.nhkim96.com/meonggiocf'
-    },
+    //{
+      //name: 'Ocean First',
+      //src: 'https://portfolio.nhkim96.com/meonggiocf'
+    //},
     //{
       //name: 'G Well Estate',
       //src: 'https://portfolio.nhkim96.com/gwellestate'
