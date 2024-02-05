@@ -27,30 +27,30 @@ const Home: NextPage = () => {
       name: 'Red Gingseng Egg',
       src: 'https://portfolio.nhkim96.com/hongsam'
     },
-    {
-      name: 'Le10 By Trimage',
-      src: 'https://portfolio.nhkim96.com/le10bytrimage'
-    },
-    {
-      name: 'AMADEN',
-      src: 'https://portfolio.nhkim96.com/amaden'
-    },
-    {
-      name: 'LAKMON',
-      src: 'https://portfolio.nhkim96.com/dongtanlakmon'
-    },
-    {
-      name: 'ELSIGNATURE',
-      src: 'https://portfolio.nhkim96.com/elsignature'
-    },
+    //{
+      //name: 'Le10 By Trimage',
+      //src: 'https://portfolio.nhkim96.com/le10bytrimage'
+    //},
+    //{
+      //name: 'AMADEN',
+      //src: 'https://portfolio.nhkim96.com/amaden'
+    //},
+    //{
+      //name: 'LAKMON',
+      //src: 'https://portfolio.nhkim96.com/dongtanlakmon'
+    //},
+    //{
+      //name: 'ELSIGNATURE',
+      //src: 'https://portfolio.nhkim96.com/elsignature'
+    //},
     {
       name: 'Ocean First',
       src: 'https://portfolio.nhkim96.com/meonggiocf'
     },
-    {
-      name: 'G Well Estate',
-      src: 'https://portfolio.nhkim96.com/gwellestate'
-    },
+    //{
+      //name: 'G Well Estate',
+      //src: 'https://portfolio.nhkim96.com/gwellestate'
+    //},
     {
       name: 'Hillstate Adview',
       src: 'https://portfolio.nhkim96.com/hillstate_sunhwathewise/adview.php'
