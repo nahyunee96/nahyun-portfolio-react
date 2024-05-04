@@ -1,77 +1,11 @@
 import type { NextPage } from 'next'
 import Link from 'next/link';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
+import portfolio from '../fixtures/portfolio.json';
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  // const [isReady, setIsReady] = useState<boolean>(false);
-  // useEffect(() => {
-  //   setIsReady(true);
-  // }, []);
-
-  const portfolios = useMemo(() => [
-    {
-      name: 'HiveMedia',
-      src: 'http://13.125.72.223/'
-    },
-    {
-      name: 'Event World',
-      src: 'https://eventworld.kr/'
-    },
-    {
-      name: 'One Meditech',
-      src: 'https://portfolio.nhkim96.com/onemeditech'
-    },
-    {
-      name: 'Red Gingseng Egg',
-      src: 'https://portfolio.nhkim96.com/hongsam'
-    },
-    //{
-      //name: 'Le10 By Trimage',
-      //src: 'https://portfolio.nhkim96.com/le10bytrimage'
-    //},
-    //{
-      //name: 'AMADEN',
-      //src: 'https://portfolio.nhkim96.com/amaden'
-    //},
-    //{
-      //name: 'LAKMON',
-      //src: 'https://portfolio.nhkim96.com/dongtanlakmon'
-    //},
-    //{
-      //name: 'ELSIGNATURE',
-      //src: 'https://portfolio.nhkim96.com/elsignature'
-    //},
-    //{
-      //name: 'Ocean First',
-      //src: 'https://portfolio.nhkim96.com/meonggiocf'
-    //},
-    //{
-      //name: 'G Well Estate',
-      //src: 'https://portfolio.nhkim96.com/gwellestate'
-    //},
-    {
-      name: 'Hillstate Adview',
-      src: 'https://portfolio.nhkim96.com/hillstate_sunhwathewise/adview.php'
-    },
-    // {
-    //   name: 'Ulleng',
-    //   src: '//portfolio.nhkim96.com/ulleng'
-    // },
-    {
-      name: 'TiGroup',
-      src: 'https://portfolio.nhkim96.com/tigroup'
-    }
-    // {
-    //   name: 'TwentyFirst',
-    //   src: '//portfolio.nhkim96.com/twentyfirst'
-    // },
-    // {
-    //   name: 'Us_Maska',
-    //   src: '//portfolio.nhkim96.com/us_maska'
-    // }
-  ], []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -129,7 +63,7 @@ const Home: NextPage = () => {
   }, []);
 
   const moveTo = (sectionNum: number): void => {
-    //menu move
+    // menu move
     const sectionElem = document.getElementById(`sMove${sectionNum}`) as HTMLElement;
     const sectionOffset = sectionElem.offsetTop;
 
@@ -189,7 +123,7 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           <div className={styles.night}>
             {
-              Array(20).fill(0).map((_: number, i: number) => (
+              Array(20).fill(0).map((_, i) => (
                 <div className={styles.shooting_star} key={i}></div>
               ))
             }
@@ -235,10 +169,10 @@ const Home: NextPage = () => {
           <div className={styles.inner}>
             <ul className={styles.stackWrap}>
               {
-                portfolios.map((item: { name: string; src: string; }, i: number) => (
+                portfolio.map((item, i) => (
                   <li className={styles.stackBox} key={`li-${i}`}>
                     <a href={item.src} target="_blank" rel="noreferrer" className={styles.stack}>
-                      <span >
+                      <span>
                         <div className={styles.stack__deco}></div>
                         <div className={styles.stack__deco}></div>
                         <div className={styles.stack__deco}></div>
@@ -249,6 +183,19 @@ const Home: NextPage = () => {
                   </li>
                 ))
               }
+              <li className={styles.stackBox}>
+                <Link href={{ pathname: '/cv' }}>
+                  <a className={styles.stack}>
+                    <span>
+                      <div className={styles.stack__deco}></div>
+                      <div className={styles.stack__deco}></div>
+                      <div className={styles.stack__deco}></div>
+                      <div className={styles.stack__deco}></div>
+                      <div className={styles.stack__figure}>더 보기 (PDF)</div>
+                    </span>
+                  </a>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -261,7 +208,7 @@ const Home: NextPage = () => {
             </h3>
             <ul className={styles.info}>
               <li>
-                <label htmlFor="TEL.">TEl.</label> 
+                <label htmlFor="TEL.">TEL.</label> 
                 <span>010-5736-2172</span>
               </li>
               <li>
